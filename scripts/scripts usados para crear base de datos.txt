@@ -1,0 +1,79 @@
+-- creación de la base de datos
+
+drop database if exists ropa;
+
+create database ropa;
+
+use ropa;
+
+-- creación de tablas marcas, prendas, ventas
+
+CREATE table marcas (
+	idMarca int AUTO_INCREMENT primary KEY,
+    nombre varchar(50),
+    pais varchar(50)
+);
+
+create table prendas (
+	idPrenda int AUTO_INCREMENT primary KEY,
+    idMarca int,
+    nombre varchar(50),
+    categoria varchar(50),
+    color varchar(50),
+    talla varchar(50),
+    precio int,
+    stock int,
+    FOREIGN key (idMarca) REFERENCES marcas(idMarca)
+);
+
+CREATE TABLE ventas (
+	idVenta int AUTO_INCREMENT primary KEY,
+    idPrenda int,
+    fechaVenta date,
+    cantidadVendidad int,
+    precioUnitario int,
+    totalVenta int,
+    FOREIGN KEY (idPrenda) REFERENCES prendas(idPrenda)
+)
+
+
+-- llenado de datos
+
+ Volcado de datos para la tabla `marcas`
+--
+
+INSERT INTO `marcas` (`idMarca`, `nombre`, `pais`, `anioCreacion`, `web`) VALUES
+(1, 'Nike', 'Estados Unidos', 1964, 'https://www.nike.com'),
+(2, 'Adidas', 'Alemania', 1949, 'https://www.adidas.com'),
+(3, 'Zara', 'España', 1975, 'https://www.zara.com'),
+(4, 'Gucci', 'Italia', 1921, 'https://www.gucci.com'),
+(5, 'H&M', 'Suecia', 1947, 'https://www.hm.com'),
+(6, 'Levi\'s', 'Estados Unidos', 1853, 'https://www.levi.com'),
+(7, 'Calvin Klein', 'Estados Unidos', 1968, 'https://www.calvinklein.us'),
+(8, 'Puma', 'Alemania', 1948, 'https://www.puma.com');
+
+-- Volcado de datos para la tabla `prendas`
+--
+
+INSERT INTO `prendas` (`idPrenda`, `idMarca`, `nombre`, `categoria`, `color`, `talla`, `precio`, `stock`) VALUES
+(1, 1, 'Air Max 90', 'Zapatillas', 'Blanco', '40', 150, 50),
+(2, 2, 'Superstar', 'Zapatillas', 'Negro', '38', 100, 30),
+(3, 3, 'Camisa Cuadros', 'Camisas', 'Azul', 'M', 30, 20),
+(4, 4, 'Marmont', 'Bolsos', 'Rojo', 'Única', 800, 10),
+(5, 5, 'Jersey Cuello Alto', 'Jerseys', 'Gris', 'L', 50, 15),
+(6, 6, '501 Original Fit', 'Jeans', 'Azul', '32x32', 80, 25),
+(7, 7, 'Boxer Briefs 3-Pack', 'Ropa Interior', 'Negro', 'M', 25, 40),
+(8, 8, 'Future Rider', 'Zapatillas', 'Azul', '41', 90, 35);
+
+-- Volcado de datos para la tabla `ventas`
+--
+
+INSERT INTO `ventas` (`idVenta`, `idPrenda`, `fechaVenta`, `cantidadVendida`, `precioUnitario`, `totalVenta`) VALUES
+(1, 1, '2024-06-01', 5, 150, 750),
+(2, 2, '2024-06-01', 3, 100, 300),
+(3, 3, '2024-06-02', 2, 30, 60),
+(4, 4, '2024-06-02', 1, 800, 800),
+(5, 5, '2024-06-03', 4, 50, 200),
+(6, 6, '2024-06-03', 2, 80, 160),
+(7, 7, '2024-06-03', 5, 25, 125),
+(8, 8, '2024-06-03', 3, 90, 270);
