@@ -5,9 +5,10 @@ contiene la informacion necesaria para poder crear una base de datos llamada rop
 
 DIAGRAMA DE BASE DE DATOS
 
+![imagen](https://github.com/ALESolisR/desarrollo-parte-1/assets/152571763/e9253b3d-fcbd-40e3-9653-4860e45d0514)
+
 
 INTEGRANTES DEL PROYECTO
 - Alejandro Solis Rojas
 - Cristopher Leiton Serrano
-![imagen](https://github.com/ALESolisR/desarrollo-parte-1/assets/152571763/40ec100b-f4ec-4a97-b77b-aa16a7462f00)
 
