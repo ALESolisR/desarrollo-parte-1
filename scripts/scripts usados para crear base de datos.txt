@@ -100,6 +100,7 @@ GROUP BY fechaVenta;
 
 -- Obtener la lista de todas las marcas que tienen al menos una venta.
 
+CREATE VIEW marcas_con_almenos_una_venta AS
 SELECT m.nombre AS nombreMarca, SUM(v.cantidadVendida) AS totalVendido
 FROM marcas m
 JOIN prendas p ON m.idMarca = p.idMarca
@@ -108,6 +109,7 @@ GROUP BY m.nombre;
 
 -- Obtener prendas vendidas y su cantidad restante en stock.
 
+CREATE VIEW prendas_vendidas_y_cantidad_restante_en_stock AS
 SELECT p.idPrenda,
        p.nombre AS nombrePrenda,
        p.stock AS stockRestante,
@@ -118,6 +120,7 @@ GROUP BY p.idPrenda, p.nombre, p.stock;
 
 -- Obtener listado de las 5 marcas más vendidas y su cantidad de ventas.
 
+CREATE VIEW top_5_marcas_vendidas_y_cantidad_vendida AS
 SELECT m.nombre AS nombreMarca,
        SUM(v.cantidadVendida) AS totalVendidas
 FROM marcas m
