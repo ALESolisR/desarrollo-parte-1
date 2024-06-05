@@ -9,3 +9,5 @@ DIAGRAMA DE BASE DE DATOS
 INTEGRANTES DEL PROYECTO
 - Alejandro Solis Rojas
 - Cristopher Leiton Serrano
+![imagen](https://github.com/ALESolisR/desarrollo-parte-1/assets/152571763/40ec100b-f4ec-4a97-b77b-aa16a7462f00)
+
