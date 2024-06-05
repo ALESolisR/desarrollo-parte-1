@@ -30,7 +30,7 @@ CREATE TABLE ventas (
 	idVenta int AUTO_INCREMENT primary KEY,
     idPrenda int,
     fechaVenta date,
-    cantidadVendidad int,
+    cantidadVendida int,
     precioUnitario int,
     totalVenta int,
     FOREIGN KEY (idPrenda) REFERENCES prendas(idPrenda)
@@ -77,3 +77,52 @@ INSERT INTO `ventas` (`idVenta`, `idPrenda`, `fechaVenta`, `cantidadVendida`, `p
 (6, 6, '2024-06-03', 2, 80, 160),
 (7, 7, '2024-06-03', 5, 25, 125),
 (8, 8, '2024-06-03', 3, 90, 270);
+
+
+-- eliminacion de algun dato
+
+DELETE from ventas WHERE idVenta = 8;
+
+-- actualizacion de algun dato
+
+UPDATE prendas
+SET stock = 30
+WHERE nombre = 'Marmont';
+
+-- punto g Obtener la cantidad vendida de prendas por fecha y fíltrala con una fecha específica.
+
+SELECT fechaVenta, SUM(cantidadVendida) AS totalVendido
+FROM ventas
+WHERE fechaVenta = '2024-06-03'
+GROUP BY fechaVenta;
+
+-- punto h creacion de vistas
+
+-- Obtener la lista de todas las marcas que tienen al menos una venta.
+
+SELECT m.nombre AS nombreMarca, SUM(v.cantidadVendida) AS totalVendido
+FROM marcas m
+JOIN prendas p ON m.idMarca = p.idMarca
+JOIN ventas v ON p.idPrenda = v.idPrenda
+GROUP BY m.nombre;
+
+-- Obtener prendas vendidas y su cantidad restante en stock.
+
+SELECT p.idPrenda,
+       p.nombre AS nombrePrenda,
+       p.stock AS stockRestante,
+       IFNULL(SUM(v.cantidadVendida), 0) AS cantidadVendida
+FROM prendas p
+LEFT JOIN ventas v ON p.idPrenda = v.idPrenda
+GROUP BY p.idPrenda, p.nombre, p.stock;
+
+-- Obtener listado de las 5 marcas más vendidas y su cantidad de ventas.
+
+SELECT m.nombre AS nombreMarca,
+       SUM(v.cantidadVendida) AS totalVendidas
+FROM marcas m
+JOIN prendas p ON m.idMarca = p.idMarca
+JOIN ventas v ON p.idPrenda = v.idPrenda
+GROUP BY m.idMarca, m.nombre
+ORDER BY totalVendidas DESC
+LIMIT 5;
