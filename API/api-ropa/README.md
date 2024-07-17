@@ -1,1 +1,37 @@
+//metodos get para cada tabla
 
+http://localhost/api-ropa/public/index.php/marcas
+
+http://localhost/api-ropa/public/index.php/prendas
+
+http://localhost/api-ropa/public/index.php/ventas
+
+//metodos post para cada tabla. se debe escribir el body en raw y tipo json con el formato de los campos
+
+http://localhost/api-ropa/public/index.php/marcas
+
+http://localhost/api-ropa/public/index.php/prendas
+
+http://localhost/api-ropa/public/index.php/ventas
+
+
+//metodos put para cada tabla, se debe dar el id a modificar, en body poner en raw y json y poner los datos nuevos
+
+http://localhost/api-ropa/public/index.php/ventas/8
+
+http://localhost/api-ropa/public/index.php/prendas/9
+
+http://localhost/api-ropa/public/index.php/marcas/9
+
+para las vistas se debe colocar en la url /vista#,  donde # se reemplaza por un numero entre 1 y 3 que son las vistas hasta el momento
+
+1 = lista de todas las marcas que tienen al menos una venta.
+2 = Prendas vendidas y su cantidad restante en stock.
+3 = Listado de las 5 marcas más vendidas y su cantidad de
+ventas.
+
+ejemplo de los endpoints
+
+http://localhost/api-ropa/public/index.php/vista1
+http://localhost/api-ropa/public/index.php/vista2
+http://localhost/api-ropa/public/index.php/vista3
