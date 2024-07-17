@@ -5,6 +5,7 @@ contiene la informacion necesaria para poder crear una base de datos llamada rop
 
 DIAGRAMA DE BASE DE DATOS
 
+![imagen](https://github.com/user-attachments/assets/1b0ed825-9241-4edc-95bd-96f2965b4c79)
 
 
 
