@@ -28,8 +28,8 @@ http://localhost/api-ropa/public/index.php/prendas/9
 
 http://localhost/api-ropa/public/index.php/marcas/9
 
-para las vistas se debe colocar en la url /vista#,  donde # se reemplaza por un numero entre 1 y 3
-
+//para las vistas se debe colocar en la url /vista#,  donde # se reemplaza //por un numero entre 1 y 3 que son las vistas hasta el momento
+//cambiar nombre de las vistas
 1 = lista de todas las marcas que tienen al menos una venta.
 2 = Prendas vendidas y su cantidad restante en stock.
 3 = Listado de las 5 marcas más vendidas y su cantidad de

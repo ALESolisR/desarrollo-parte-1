@@ -18,17 +18,17 @@ $segmentosDeUrl = explode('/', $path);
 //var_dump($_SERVER['PATH_INFO']);
 //var_dump($path);
 //var_dump($segments);
-var_dump($method);
-var_dump($path);
-var_dump($segmentosDeUrl);
+//var_dump($method);
+//var_dump($path);
+//var_dump($segmentosDeUrl);
 
 
 // Obtiene el primer elemento del arreglo
 $rutaControlador = array_shift($segmentosDeUrl);
-var_dump($rutaControlador);
+//var_dump($rutaControlador);
 // Obtiene el ultimo
 $id = end($segmentosDeUrl );
-var_dump("id pasado en la url: ". $id);
+//var_dump("id pasado en la url: ". $id);
 
 //inicio del if elseif.
 if($rutaControlador == "prueba") {
@@ -109,7 +109,7 @@ elseif($rutaControlador == "ventas"){
 }
 //llamado de las vistas 1
 elseif($rutaControlador == "vista1"){
-    echo("marcas con una venta o mas");
+    //echo("marcas con una venta o mas");
     $objMarcas = new MarcasController();
 
     switch ($method) {
@@ -122,7 +122,7 @@ elseif($rutaControlador == "vista1"){
 }
 //vista 2
 elseif($rutaControlador == "vista2"){
-    echo("prendas vendidas y stock restante");
+    //echo("prendas vendidas y stock restante");
     $objMarcas = new PrendasController();
 
     switch ($method) {
@@ -136,7 +136,7 @@ elseif($rutaControlador == "vista2"){
 
 //vista 3
 elseif($rutaControlador == "vista3"){
-    echo("top 5 marcas mas vendidas");
+    //echo("top 5 marcas mas vendidas");
     $objMarcas = new VentasController();
 
     switch ($method) {

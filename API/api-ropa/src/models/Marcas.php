@@ -29,7 +29,7 @@ class Marcas {
     public function create($data) {
         $stmt = $this->db->prepare("INSERT INTO marcas (anioCreacion, idMarca, nombre, pais, web) VALUES (?, ?, ?, ?, ?)");
         $stmt->execute([$data['anioCreacion'], $data['idMarca'], $data['nombre'], $data['pais'], $data['web']]);
-        return ['id' => $this->db->lastInsertId()];
+        return ['id ingresado' => $this->db->lastInsertId()];
     }
 
     //metodo actualizar
